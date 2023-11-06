@@ -613,6 +613,9 @@
 #greenPlant .container {
   padding: 80px;
 }
+#greenPlant .container img:hover {
+  opacity: 0.8;
+}
 #greenPlant .container .box {
   display: flex;
   flex-wrap: wrap;

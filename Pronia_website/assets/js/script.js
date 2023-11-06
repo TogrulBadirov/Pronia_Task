@@ -4,7 +4,6 @@ const sliderPhotoArr = [
 ]
 
 const body = document.querySelector('body')
-const sliderImg = document.getElementById('sliderImg')
 const responsiveNav = document.getElementById('responsiveNav')
 const basketSection = document.getElementById('basketSection')
 const closeNav = document.querySelector('#responsiveNav .fa-x')
@@ -23,11 +22,12 @@ const lastestBtn = document.getElementById('lastestBtn')
 
 //Filter buttons end
 
-
-
+//Slider Start
+const sliderImg = document.getElementById('sliderImg')
 const prevBtn = document.querySelector('.prevBtn')
 const nextBtn = document.querySelector('.nextBtn')
 let ind = 0;
+//Slider End
 
 const nav = document.querySelector('#nav')
 const header = document.querySelector('#header')
@@ -100,88 +100,22 @@ closeBasket.addEventListener('click',()=>{
     basketSection.style.display = 'none'
 })
 
-
-
-
-
+const newProductCards = document.querySelector('#newProducts .cards')
 
 async function getData() {
     const resp = await axios.get('http://localhost:3000/products')
     resp.data.forEach(element => {
-        let newProduct = document.createElement('div')
-        newProduct.setAttribute('data',element.type)
-        newProduct.classList.add('card')
-        let imgDiv = document.createElement('div')
-        imgDiv.classList.add('img')
-        let img = document.createElement('img')
-        img.src = `${element.image}`
-        let actions = document.createElement('div')
-        actions.classList.add('actions')
-
-        // actions.innerHTML=`
-                                
-        //                         <i class="pe-7s-like"></i>
-        //                         <i class="pe-7s-look"></i>
-        //                         <i class="pe-7s-cart"></i>
-                                
-                            
-        // `
-        let like = document.createElement('i')
-        like.classList.add('pe-7s-like')
-        let look = document.createElement('i')
-        look.classList.add('pe-7s-look')
-        let cart = document.createElement('i')
-        cart.classList.add('pe-7s-cart')
-        actions.append(like,look,cart)
-        imgDiv.append(img,actions)
-        
-        let a = document.createElement('a')
-        a.innerHTML = `${element.name}`
-        let span = document.createElement('span')
-        span.innerHTML = `$${element.price}`
-
-        let rating = document.createElement('div')
-        rating.classList.add('rating')
-        rating.innerHTML =`
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        `
-        newProduct.append(imgDiv,a,span,rating)
-        // newProduct.innerHTML = `
-        
-        //                 <div class="img">
-        //                     <img src="${element.image}" alt="img">
-        //                     <div class="actions">
-        //                         <i class="pe-7s-like"></i>
-        //                         <i class="pe-7s-look"></i>
-        //                         <i class="pe-7s-cart"></i>
-                                
-        //                     </div>
-        //                 </div>
-        //                 <a href="#">${element.name}</a>
-        //                 <span>$${element.price}</span>
-        //                 <div class="rating">
-        //                     <i class="fa fa-star"></i>
-        //                     <i class="fa fa-star"></i>
-        //                     <i class="fa fa-star"></i>
-        //                     <i class="fa fa-star"></i>
-        //                     <i class="fa fa-star"></i>
-        //                 </div>
-                    
-        // `
-        cards.append(newProduct)
-
-        cart.addEventListener('click',()=>{
-            
-            basket.push(element)
-            localStorage.setItem('basket',JSON.stringify(basket))
-            loadBasket()
-        })
+        loadCard(element)
+        let newProducts = loadCard(element)
+        cards.append(newProducts)
     });
-
+    resp.data.forEach(newItem => {
+        if (newItem.isNew === true) {
+            loadCard(newItem)
+            let newProducts = loadCard(newItem)
+            newProductCards.append(newProducts) 
+        }
+    });
 // featuredBtn
 // bestSellerBtn
 // lastestBtn
@@ -241,7 +175,7 @@ data.forEach(element => {
     let card = document.createElement('div')
     card.classList.add('card')
     let img = document.createElement('img')
-    img.src = `${element.image}`
+    img.src = `${element.image[0]}`
     let content = document.createElement('div')
     content.classList.add('content')
     let p = document.createElement('p')
@@ -275,3 +209,58 @@ data.forEach(element => {
     
 }
 loadBasket()
+
+function loadCard(element) {
+    let newProduct = document.createElement('div')
+        newProduct.setAttribute('data',element.type)
+        newProduct.classList.add('card')
+        let imgDiv = document.createElement('div')
+        imgDiv.classList.add('img')
+        let img = document.createElement('img')
+        img.src = `${element.image[0]}`
+        let actions = document.createElement('div')
+        actions.classList.add('actions')
+
+        let like = document.createElement('i')
+        like.classList.add('pe-7s-like')
+        let look = document.createElement('i')
+        look.classList.add('pe-7s-look')
+        let cart = document.createElement('i')
+        cart.classList.add('pe-7s-cart')
+        actions.append(like,look,cart)
+        imgDiv.append(img,actions)
+        
+        let a = document.createElement('a')
+        a.innerHTML = `${element.name}`
+        let span = document.createElement('span')
+        span.innerHTML = `$${element.price}`
+
+        let rating = document.createElement('div')
+        rating.classList.add('rating')
+        rating.innerHTML =`
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        `
+        newProduct.append(imgDiv,a,span,rating)
+
+        // cards.append(newProduct)
+
+        cart.addEventListener('click',()=>{
+            
+            basket.push(element)
+            localStorage.setItem('basket',JSON.stringify(basket))
+            loadBasket()
+        })
+        newProduct.addEventListener('mouseover',()=>{
+        img.src = `${element.image[1]}`
+
+        })
+        newProduct.addEventListener('mouseout',()=>{
+        img.src = `${element.image[0]}`
+
+        })
+        return newProduct
+}
