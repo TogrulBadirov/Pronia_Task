@@ -743,6 +743,60 @@
         }
     }
 }
+
+footer{
+    background: url(https://htmldemo.net/pronia/pronia/assets/images/footer/bg/1-1920x465.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    // height: 30vh;
+    .container{
+        padding: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .footer-nav{
+            display: flex;
+            // justify-content: center;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 20px;
+            .content{
+                width: 280px;
+            }
+            p{
+                padding: 15px 0;
+            }
+            h3{
+                font-weight: 400;
+                padding-top: 30px;
+            }
+            ul{
+                padding: 10px 60px 10px 0;
+                list-style: none;
+                li{
+                    padding: 5px 0;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+        
+    }
+    .copyright{
+        text-align: center;
+        padding: 20px;
+        color: #8dba87;
+        max-width: 800px;
+        border-top: 1px solid #8dba87;
+        margin: 0 auto;
+    }
+    
+}
 @keyframes StickyNav {
     from {
         opacity: 0;
@@ -821,6 +875,23 @@
         visibility: hidden;
         display: none;
     }
+
+    #slider{
+        .imgContent{
+            span{
+                font-size: 26px;
+            }
+            h2{
+                font-size: 58px;
+            }
+            p{
+                font-size: 16px;
+            }
+            button{
+                font-size: 12px;
+            }
+        }
+    }
 }
 @media screen and (max-width: 767px) {
     #potteryPost {
@@ -891,6 +962,22 @@
         visibility: hidden;
         display: none;
     }
+    #slider{
+        .imgContent{
+            span{
+                font-size: 26px;
+            }
+            h2{
+                font-size: 58px;
+            }
+            p{
+                font-size: 16px;
+            }
+            button{
+                font-size: 12px;
+            }
+        }
+    }
 }
 // @media (max-width: 768px) {
 //     .discount, .pronia, .container {
@@ -911,3 +998,32 @@
 //         transform: translateX(0);
 //     }
 // }
+.imgContent{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-wrap: wrap-reverse;
+    gap: 80px;
+    padding: 20px;
+    span{
+        font-size: 48px;
+        font-weight: 300;
+    }
+    h2{
+        font-size: 90px;
+        font-weight: 400;
+    }
+    p{
+        font-size: 22px;
+    }
+    button{
+        font-size: 16px;
+        padding: 20px 30px;
+        border-radius: 30px;
+        border: none;
+        color: white;
+        background-color: #abd373;
+        cursor: pointer;
+        margin: 40px 0;
+    }
+}

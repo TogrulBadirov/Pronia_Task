@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
@@ -188,10 +189,19 @@
                     <i class="fa-solid  fa-arrow-left-long"></i>
                 </button>
             </div>
-            <div class="container" data-aos="fade-up" data-aos-duration="1000" >
+
+            <div class="imgContent">
+                <div>
+                    <span>65% OFF</span>
+                    <h2>NEW PLANT</h2>
+                    <p>Pronia, With 100% Natural, Organic & Plant Shop</p>
+                    <button>DISCOVER NOW</button>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-duration="1000" >
                 
-                <img  id='sliderImg' src="https://htmldemo.net/pronia/pronia/assets/images/slider/inner-img/1-1-524x617.png" alt="flower">
-               
+                    <img  id='sliderImg' src="https://htmldemo.net/pronia/pronia/assets/images/slider/inner-img/1-1-524x617.png" alt="flower">
+                   
+                </div>
             </div>
             <div class="button">
                 <button class="nextBtn">
@@ -236,9 +246,9 @@
             <div class="container">
                 <h2>OUR PRODUCTS</h2>
                 <div class="filter">
-                    <button>Featured</button>
-                    <button>BestSeller</button>
-                    <button>Lastest</button>
+                    <button id="featuredBtn">Featured</button>
+                    <button id="bestSellerBtn">BestSeller</button>
+                    <button id="lastestBtn">Lastest</button>
                 </div>
                 <div class="cards">
                    
@@ -496,8 +506,71 @@
         </section>
     </main>
 <footer>
+<div class="container">
+    <div class="footer-nav">
+        
+            <div class="content"> 
 
+                <img src="https://htmldemo.net/pronia/pronia/assets/images/logo/dark.png" alt="">
+        <p>Lorem ipsum dolor sit amet, consec adipisl elit, sed do eiusmod tempor
+            incidio ut labore et dolore magna.</p>
+            <div class="icons">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-solid fa-basketball"></i>
+            </div>
+
+            </div>
+            
+            <div>
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">About Pronia</a></li>
+                    <li><a href="#">How to shop</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Log in</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>My Account</h3>
+                <ul>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">My Wishlist</a></li>
+                    <li><a href="#">Track My Order</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Our Service</a></li>
+                    <li><a href="#">Payment Methods</a></li>
+                    <li><a href="#">Money Guarantee!</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Got Question? Call Us</h3>
+                <h2>123 456 789</h2>
+                <p>Your Address Goes Here</p>
+                <img src="https://htmldemo.net/pronia/pronia/assets/images/payment/1.png" alt="">
+            </div>
+        
+    </div>
+    <!-- <div class="footer-content">
+        <p>© 2021 Pronia Made With  By HasThemes</p>
+    </div> -->
+</div>
+<div class="copyright">
+    <p>© 2021 Pronia Made With <i class="fa fa-heart text-danger" style="color: red;"></i> By HasThemes</p>
+</div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="./assets/js/script.js"></script>

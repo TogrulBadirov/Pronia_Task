@@ -4,49 +4,64 @@
       "id": 0,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-1-270x300.jpg",
       "name": "American Marigold",
-      "price": 23.45
+      "price": 23.45,
+      "type": "featured"
     },
     {
       "id": 1,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-2-270x300.jpg",
       "name": "Black Eyed Susan",
-      "price": 23.45
+      "price": 23.45,
+      "type": "bestSeller"
+
     },
     {
       "id": 2,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-3-270x300.jpg",
       "name": "Bleeding Heart",
-      "price": 30.45
+      "price": 30.45,
+      "type": "featured"
+
     },
     {
       "id": 3,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-4-270x300.jpg",
       "name": "Bloody Cranesbill",
-      "price": 45.00
+      "price": 45.00,
+      "type": "bestSeller"
+
     },
     {
       "id": 4,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-5-270x300.jpg",
       "name": "Butterfly Weed",
-      "price": 50.45
+      "price": 50.45,
+      "type": "lastest"
+
     },
     {
       "id": 5,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-6-270x300.jpg",
       "name": "Common Yarrow",
-      "price": 65.00
+      "price": 65.00,
+      "type": "lastest"
+
     },
     {
       "id": 6,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-7-270x300.jpg",
       "name": "Doublefile Viburnum",
-      "price": 67.45
+      "price": 67.45,
+      "type": "featured"
+
     },
     {
       "id": 7,
       "image": "https://htmldemo.net/pronia/pronia/assets/images/product/medium-size/1-8-270x300.jpg",
       "name": "Feather Reed Grass",
-      "price": 20.00
+      "price": 20.00,
+      "type": "bestSeller"
+
     }
   ],
   "comments": [

@@ -14,6 +14,17 @@ const basketIcon = document.querySelector('.fa-basket-shopping')
 const responsiveNavLi = document.querySelectorAll('.menu li')
 const cardsBasket = document.querySelector('#basketSection .cards')
 
+//Filter buttons start
+
+const featuredBtn = document.getElementById('featuredBtn')
+const bestSellerBtn = document.getElementById('bestSellerBtn')
+const lastestBtn = document.getElementById('lastestBtn')
+
+
+//Filter buttons end
+
+
+
 const prevBtn = document.querySelector('.prevBtn')
 const nextBtn = document.querySelector('.nextBtn')
 let ind = 0;
@@ -91,10 +102,14 @@ closeBasket.addEventListener('click',()=>{
 
 
 
+
+
+
 async function getData() {
     const resp = await axios.get('http://localhost:3000/products')
     resp.data.forEach(element => {
         let newProduct = document.createElement('div')
+        newProduct.setAttribute('data',element.type)
         newProduct.classList.add('card')
         let imgDiv = document.createElement('div')
         imgDiv.classList.add('img')
@@ -123,7 +138,7 @@ async function getData() {
         let a = document.createElement('a')
         a.innerHTML = `${element.name}`
         let span = document.createElement('span')
-        span.innerHTML = `${element.price}`
+        span.innerHTML = `$${element.price}`
 
         let rating = document.createElement('div')
         rating.classList.add('rating')
@@ -166,6 +181,51 @@ async function getData() {
             loadBasket()
         })
     });
+
+// featuredBtn
+// bestSellerBtn
+// lastestBtn
+    const allCards = cards.querySelectorAll('.card')
+featuredBtn.addEventListener('click',()=>{
+    console.log(allCards);
+    allCards.forEach(element => {
+        console.log(element);
+        if (element.getAttribute('data')==="featured") {
+            element.style.display = 'flex'
+        }
+        else{
+            element.style.display = 'none'
+
+        }
+    });
+})
+bestSellerBtn.addEventListener('click',()=>{
+    console.log(allCards);
+    allCards.forEach(element => {
+        console.log(element);
+        if (element.getAttribute('data')==="bestSeller") {
+            element.style.display = 'flex'
+        }
+        else{
+            element.style.display = 'none'
+
+        }
+    });
+})
+lastestBtn.addEventListener('click',()=>{
+    console.log(allCards);
+    allCards.forEach(element => {
+        console.log(element);
+        if (element.getAttribute('data')==="lastest") {
+            element.style.display = 'flex'
+        }
+        else{
+            element.style.display = 'none'
+
+        }
+    });
+})
+
 }
 
 getData()
@@ -187,7 +247,7 @@ data.forEach(element => {
     let p = document.createElement('p')
     p.innerHTML = `${element.name}`
     let span = document.createElement('span')
-    span.innerHTML = `${element.price}`
+    span.innerHTML = `$${element.price}`
     let i = document.createElement('span')
     i.classList.add('fa-solid')
     i.classList.add('fa-x')
