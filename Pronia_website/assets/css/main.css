@@ -1,0 +1,800 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+#header .discount {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #abd373;
+  color: white;
+}
+#header .pronia {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  color: #525252;
+}
+#header .pronia .phone .fa-phone::before {
+  contain: "";
+  color: white;
+  padding: 10px;
+  background-color: #abd373;
+  border-radius: 5px;
+}
+#header i {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+#header .fa-bars {
+  display: none;
+}
+
+#nav #nav > ul {
+  max-width: 100%;
+}
+#nav > ul > li > .submenu {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  border-top: 1px solid #dee2e6;
+}
+#nav ul li {
+  position: relative;
+}
+#nav ul li .submenu {
+  text-transform: uppercase;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  white-space: nowrap;
+  z-index: 3;
+  padding: 20px;
+}
+#nav ul li .submenu li a {
+  transition: 0.4s;
+}
+#nav ul li .submenu li a:hover {
+  transform: translateX(10px);
+}
+#nav ul li .submenu li a::after {
+  content: "";
+  width: 0px;
+}
+#nav ul li .submenu li a:hover::after {
+  width: 0px;
+}
+#nav ul li .shopNav {
+  z-index: 3;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  gap: 0;
+  visibility: hidden;
+}
+#nav ul li .shopNav ul {
+  background-color: white;
+}
+#nav ul li .shopNav li {
+  position: relative;
+}
+#nav ul li .shopNav .submenu {
+  position: relative;
+  top: 0px;
+  padding: 40px;
+  color: #383838;
+}
+#nav ul li .shopNav .submenu a {
+  padding: 0;
+}
+#nav ul li .shopNav .submenu h3 {
+  font-weight: 500;
+}
+#nav ul .blogNav li ul {
+  transform: scaleY(0) !important;
+  visibility: hidden !important;
+  position: absolute;
+  top: 0;
+  left: 205px;
+  background-color: white;
+}
+#nav ul .blogNav li:hover .multipleLevel {
+  transform: scaleY(1) !important;
+  visibility: visible !important;
+}
+#nav ul .blogNav .multipleLevel li:hover ul {
+  transform: scaleY(1) !important;
+  visibility: visible !important;
+}
+#nav ul a {
+  display: block;
+  color: #4c4c4c;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: 0.2s;
+}
+#nav ul a::after {
+  content: "";
+  background-color: #abd373;
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: 0.4s;
+}
+#nav ul li:hover > a {
+  color: #abd373;
+}
+#nav ul li:hover ul {
+  transform: scaleY(1);
+  visibility: visible;
+}
+#nav ul li:hover a::after {
+  content: "";
+  width: 100%;
+}
+
+#responsiveNav {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+#responsiveNav .nav {
+  height: 100%;
+  max-width: 300px;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#responsiveNav .nav .fa-x {
+  padding: 10px;
+  align-self: end;
+  color: white;
+}
+#responsiveNav .nav .phone {
+  padding: 20px;
+  color: white;
+}
+#responsiveNav .nav .phone .fa-phone::before {
+  contain: "";
+  color: white;
+  padding: 10px;
+  background-color: #abd373;
+  border-radius: 5px;
+}
+#responsiveNav .nav select {
+  background: transparent;
+  border: none;
+  color: white;
+}
+#responsiveNav .nav .menu {
+  list-style: none;
+  text-align: left;
+  padding: 20px;
+  max-width: 100%;
+}
+#responsiveNav .nav .menu li {
+  max-width: 100%;
+  padding: 20px 0;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+#responsiveNav .nav .menu li a {
+  text-decoration: none;
+  color: white;
+}
+#responsiveNav .nav .menu li ul {
+  display: none;
+}
+
+#responsiveNav .nav .menu li .active {
+  display: block;
+}
+
+#basketSection {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+#basketSection .nav {
+  height: 100%;
+  max-width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#basketSection .nav h3 {
+  display: inline;
+}
+#basketSection .nav .fa-x {
+  padding: 10px;
+  align-self: end;
+  color: #333333;
+}
+#basketSection .nav .cards .card {
+  display: flex;
+  border-bottom: 1px solid #303030;
+}
+#basketSection .nav .cards .card img {
+  width: 100px;
+}
+#basketSection .nav .cards .card .content {
+  padding: 20px;
+}
+
+#slider {
+  padding: 20px;
+  background-color: #f9efe9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+#slider img {
+  transition: 1s;
+  max-width: 100%;
+}
+#slider .button {
+  margin: 12px;
+}
+#slider .button button {
+  background: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 50ms;
+}
+#slider .button button:active {
+  scale: 0.9;
+}
+#slider button:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #abd373;
+  color: white;
+}
+
+#services .container {
+  padding: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+#services .container .box {
+  padding: 20px;
+  display: flex;
+  border: 1px dashed #abd373;
+  border-radius: 5px;
+}
+#services .container .box .content {
+  padding: 0 20px;
+}
+#services .container .box .content h3 {
+  padding-bottom: 10px;
+}
+
+#ourProducts .container {
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#ourProducts .container h2 {
+  font-size: 36px;
+}
+#ourProducts .container .filter {
+  padding: 40px;
+}
+#ourProducts .container .filter button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: transparent;
+  border: 1px solid #393939;
+  border-radius: 3px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#ourProducts .container .filter button:hover {
+  color: #abd373;
+}
+#ourProducts .container .filter button:active {
+  scale: 0.95;
+}
+#ourProducts .container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+#ourProducts .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+}
+#ourProducts .container .cards .card .img {
+  position: relative;
+}
+#ourProducts .container .cards .card .img .actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+  transform: translateX(-150px);
+}
+#ourProducts .container .cards .card .img .actions i {
+  font-size: 20px;
+  position: relative;
+  padding: 10px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.15);
+  margin: 0 2px;
+  transition: 0.2s;
+}
+#ourProducts .container .cards .card .img .actions i:hover {
+  color: white;
+  background-color: #abd373;
+}
+#ourProducts .container .cards .card a {
+  color: #303030;
+  text-decoration: none;
+  font-size: 18px;
+}
+#ourProducts .container .cards .card span {
+  color: #abd373;
+  font-size: 20px;
+  margin: 10px 0;
+}
+#ourProducts .container .cards .card .rating {
+  color: #ffe24d;
+}
+#ourProducts .container .cards .card:hover .actions {
+  transform: translateX(5px);
+}
+
+.stickyNav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 5px -2px gray;
+  animation-name: StickyNav;
+  animation-duration: 1s;
+}
+.stickyNav .stickyNav > ul {
+  max-width: 100%;
+}
+
+.stickyNav > ul > li {
+  padding: 20px 20px;
+}
+
+#potteryPost {
+  display: flex;
+  justify-content: center;
+}
+#potteryPost .container {
+  max-width: 1200px;
+  padding: 80px 35px;
+  margin: 0 auto;
+}
+#potteryPost .container .parent {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+#potteryPost .container .parent div {
+  position: relative;
+}
+#potteryPost .container .parent div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+#potteryPost .container .parent div .content {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 25%;
+}
+#potteryPost .container .parent div .content span {
+  font-size: 16px;
+}
+#potteryPost .container .parent div .content h3 {
+  font-size: 32px;
+  padding: 10px 0;
+  -webkit-text-stroke: 1px white;
+}
+#potteryPost .container .parent div .content button {
+  background-color: #abd373;
+  padding: 12px 30px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#potteryPost .container .parent div .content button:hover {
+  background-color: #525252;
+}
+#potteryPost .container .parent .div2 .content,
+#potteryPost .container .parent .div3 .content {
+  top: 50%;
+  left: 50%;
+}
+#potteryPost .container .parent .div1 .content,
+#potteryPost .container .parent .div4 .content {
+  top: 50%;
+  left: 25%;
+}
+#potteryPost .container .div1 {
+  grid-area: 1/1/2/3;
+}
+#potteryPost .container .div2 {
+  grid-area: 1/3/2/4;
+}
+#potteryPost .container .div3 {
+  grid-area: 2/1/3/2;
+}
+#potteryPost .container .div4 {
+  grid-area: 2/2/3/4;
+}
+
+#newProducts .container {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#newProducts .container h2 {
+  font-size: 36px;
+}
+#newProducts .container .content {
+  max-width: 590px;
+  text-align: center;
+}
+#newProducts .container .content p {
+  padding: 30px 0;
+}
+#newProducts .container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+#newProducts .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+}
+#newProducts .container .cards .card .img {
+  position: relative;
+}
+#newProducts .container .cards .card .img .actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+  transform: translateX(-150px);
+}
+#newProducts .container .cards .card .img .actions i {
+  font-size: 20px;
+  position: relative;
+  padding: 10px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.15);
+  margin: 0 2px;
+  transition: 0.2s;
+}
+#newProducts .container .cards .card .img .actions i:hover {
+  color: white;
+  background-color: #abd373;
+}
+#newProducts .container .cards .card a {
+  color: #303030;
+  text-decoration: none;
+  font-size: 18px;
+}
+#newProducts .container .cards .card span {
+  color: #abd373;
+  font-size: 20px;
+  margin: 10px 0;
+}
+#newProducts .container .cards .card .rating {
+  color: #ffe24d;
+}
+#newProducts .container .cards .card:hover .actions {
+  transform: translateX(5px);
+}
+
+#WhatSayClient .background {
+  background: url(https://htmldemo.net/pronia/pronia/assets/images/testimonial/bg/1-1-1820x443.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 50%;
+}
+#WhatSayClient .container {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#WhatSayClient .container h2 {
+  font-size: 36px;
+}
+#WhatSayClient .container .content {
+  max-width: 590px;
+  text-align: center;
+}
+#WhatSayClient .container .content p {
+  padding: 30px 0;
+}
+#WhatSayClient .container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+#WhatSayClient .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 390px;
+  color: #434343;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  padding: 30px 30px;
+  background-color: white;
+  overflow: hidden;
+}
+#WhatSayClient .container .cards .card img {
+  border-radius: 50%;
+  padding-bottom: 10px;
+}
+#WhatSayClient .container .cards .card p {
+  padding: 10px 0;
+  font-style: italic;
+}
+#WhatSayClient .container .cards .card::before {
+  content: url(https://htmldemo.net/pronia/pronia/assets/images/testimonial/icon/quotation.png);
+  width: 100px;
+  height: 100px;
+  background-color: #abd373;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 100%;
+  transition: 0.25s;
+}
+#WhatSayClient .container .cards .card:hover::before {
+  background-color: #525252;
+}
+
+#greenPlant .container {
+  padding: 80px;
+}
+#greenPlant .container .box {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+  max-height: 250px;
+  gap: 80px;
+  padding: 80px 60px;
+  background: url(https://htmldemo.net/pronia/pronia/assets/images/brand/bg/1-1170x300.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lastestBlog .container {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#lastestBlog .container h2 {
+  font-size: 36px;
+  text-align: center;
+}
+#lastestBlog .container .content {
+  text-align: center;
+  max-width: 590px;
+  text-align: center;
+}
+#lastestBlog .container .content p {
+  padding: 30px 0;
+}
+#lastestBlog .container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+#lastestBlog .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 390px;
+  color: #434343;
+  background-color: #f6f7fb;
+  border-radius: 10px;
+  padding: 40px;
+  overflow: hidden;
+}
+#lastestBlog .container .cards .card span {
+  color: #abd373;
+}
+#lastestBlog .container .cards .card h3 {
+  padding-top: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+#lastestBlog .container .cards .card h3:hover {
+  color: #abd373;
+}
+#lastestBlog .container .cards .card p {
+  padding: 30px 0;
+  font-style: italic;
+  line-height: 30px;
+}
+
+@keyframes StickyNav {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 998px) {
+  #header {
+    position: relative !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 997px) {
+  #potteryPost .container .parent {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+  #potteryPost .container .parent div .content span {
+    font-size: 12px;
+  }
+  #potteryPost .container .parent div .content h3 {
+    font-size: 25px;
+  }
+  #potteryPost .container .parent div .content button {
+    font-size: 12px;
+  }
+  #potteryPost .container .div1 {
+    grid-area: 1/1/2/3;
+  }
+  #potteryPost .container .div2 {
+    grid-area: 2/1/3/2;
+  }
+  #potteryPost .container .div3 {
+    grid-area: 2/2/3/3;
+  }
+  #potteryPost .container .div4 {
+    grid-area: 3/1/4/3;
+  }
+  #header .discount {
+    visibility: hidden;
+    display: none;
+  }
+  #header .pronia {
+    z-index: 0;
+  }
+  #header .pronia .phone {
+    display: none;
+    visibility: hidden;
+  }
+  #header .fa-user-group,
+  #header .fa-heart {
+    display: none;
+    visibility: hidden;
+  }
+  #header .fa-bars {
+    display: inline;
+  }
+  #nav {
+    visibility: hidden;
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  #potteryPost .container .div1 {
+    grid-area: 1/1/2/2;
+  }
+  #potteryPost .container .div2 {
+    grid-area: 2/1/3/2;
+  }
+  #potteryPost .container .div3 {
+    grid-area: 3/1/4/2;
+  }
+  #potteryPost .container .div4 {
+    grid-area: 4/1/5/2;
+  }
+  #potteryPost .container .parent div .content span {
+    font-size: 12px;
+  }
+  #potteryPost .container .parent div .content h3 {
+    font-size: 25px;
+  }
+  #potteryPost .container .parent div .content button {
+    font-size: 12px;
+  }
+  #potteryPost .container .parent .div1 .content,
+  #potteryPost .container .parent .div4 .content {
+    position: absolute;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 35%;
+  }
+  #header .discount {
+    visibility: hidden;
+    display: none;
+  }
+  #header .pronia {
+    z-index: 0;
+  }
+  #header .pronia .phone {
+    display: none;
+    visibility: hidden;
+  }
+  #header .fa-user-group,
+  #header .fa-heart {
+    display: none;
+    visibility: hidden;
+  }
+  #header .fa-bars {
+    display: inline;
+  }
+  #nav {
+    visibility: hidden;
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */
